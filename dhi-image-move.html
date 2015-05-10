@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Droppable - Default functionality</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
+  <style>
+  #draggable { width: 100px; height: 100px; float: right; }
+  #droppable { width: 150px; height: 150px; padding: 0.5em; float: center-right; margin: 10px; }
+  #draggable img{ max-height: 150px; max-width: 150px;}
+  </style>
+  <script>
+  $(function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this ).prepend('<img src="abc.jpg"; width = "350"; height = "350"; overflow: auto;/>');
+		$("#drggable .img1").hide();
+		//$("#droppable").find("<img>").css({'visibility','hidden'});
+      }
+    });
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="draggable" >
+  <img id="img1" src="abc.jpg" alt="no image"/>
+</div>
+ 
+<div id="droppable" >
+  <p>Drop here</p>
+</div>
+ 
+ 
+</body>
+</html>
