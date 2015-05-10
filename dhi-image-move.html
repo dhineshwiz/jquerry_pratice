@@ -8,18 +8,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   
   <style>
-  #draggable { width: 100px; height: 100px; float: right; }
+  #draggable1 { width: 100px; height: 100px; float: right; }
   #droppable { width: 150px; height: 150px; padding: 0.5em; float: center-right; margin: 10px; }
-  #draggable img{ max-height: 150px; max-width: 150px;}
+  #draggable1 img{ max-height: 150px; max-width: 150px;}
   </style>
   <script>
   $(function() {
-    $( "#draggable" ).draggable();
+    $( "#draggable1" ).draggable();
     $( "#droppable" ).droppable({
       drop: function( event, ui ) {
         $( this ).prepend('<img src="abc.jpg"; width = "350"; height = "350"; overflow: auto;/>');
-		$("#drggable .img1").hide();
-		//$("#droppable").find("<img>").css({'visibility','hidden'});
+		ui.draggable.hide();
+		$('#droppable').find("p").html("droped!!!");
+		//$('#droppable p').hide();
       }
     });
   });
@@ -27,12 +28,13 @@
 </head>
 <body>
  
-<div id="draggable" >
+<div id="draggable1" class="sam1" >
   <img id="img1" src="abc.jpg" alt="no image"/>
 </div>
  
 <div id="droppable" >
   <p>Drop here</p>
+  
 </div>
  
  
